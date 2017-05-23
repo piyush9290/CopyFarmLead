@@ -10,9 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var Label_offerID: UILabel!
+    @IBOutlet weak var Label_offerViews: UILabel!
+    @IBOutlet weak var loaderView: UIView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +29,11 @@ class ViewController: UIViewController {
     }
 
 
+    
+    func updateNavigationLabels(_ transportObj : Transport) {
+        
+        Label_offerID.text = "Offer #\(transportObj.offerID)"
+        Label_offerViews.text = "Viewed \(transportObj.offerVisits) times"
+    }
 }
 
